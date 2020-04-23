@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css">
+		<title>TECHNICAL DOCUMENTATION</title>
+	</head>
+	<body>
+		<nav id="navbar">
+		<header>LEARN PHP</header>
+		<ul>
+			<li><a class="nav-link" href="#Introduction">Introduction</a></li>
+			<li><a class="nav-link" href="#Environment_Setup">Environment Setup</a></li>
+			<li><a class="nav-link" href="#Syntax_Overview">Syntax Overview</a></li>
+			<li><a class="nav-link" href="#Variable_Types">Variable Types</a></li>
+			<li><a class="nav-link" href="#Constants_Types">Constants Types</a></li>
+			<li><a class="nav-link" href="#Operator_Types">Operator Types</a></li>
+			<li><a class="nav-link" href="#Decision_Making">Decision Making</a></li>
+			<li><a class="nav-link" href="#Loop_Types">Loop Types</a></li>
+			<li><a class="nav-link" href="#Functions">Functions</a></li>
+			<li><a class="nav-link" href="#Strings">Strings</a></li>
+		</ul>
+	</nav>
+	<main id="main-doc">
+		<section class="main-section" id="Introduction">
+		<header>Introduction</header>
+		<article>
+			<p>PHP started out as a small open source project that evolved as more and more people found out how useful it was. Rasmus Lerdorf unleashed the first version of PHP way back in 1994.</p>
+			<ul>
+				<li>PHP is a recursive acronym for "PHP: Hypertext Preprocessor".</li>
+				<li>PHP is a server side scripting language that is embedded in HTML. It is used to manage dynamic content, databases, session tracking, even build entire e-commerce sites.</li>
+				<li>It is integrated with a number of popular databases, including MySQL, PostgreSQL, Oracle, Sybase, Informix, and Microsoft SQL Server.</li>
+				<li>PHP is pleasingly zippy in its execution, especially when compiled as an Apache module on the Unix side. The MySQL server, once started, executes even very complex queries with huge result sets in record-setting time.</li>
+				<li>PHP supports a large number of major protocols such as POP3, IMAP, and LDAP. PHP4 added support for Java and distributed object architectures (COM and CORBA), making n-tier development a possibility for the first time.</li>
+				<li>PHP is forgiving: PHP language tries to be as forgiving as possible.</li>
+				<li>PHP Syntax is C-Like.</li>
+			</ul>
+			<h2>Common uses of PHP</h2>
+			<ul>
+				<li>PHP performs system functions, i.e. from files on a system it can create, open, read, write, and close them.</li>
+				<li>PHP can handle forms, i.e. gather data from files, save data to a file, through email you can send data, return data to the user.</li>
+				<li>You add, delete, modify elements within your database through PHP.</li>
+				<li>Access cookies variables and set cookies</li>
+				<li>Using PHP, you can restrict users to access some pages of your website.</li>
+			</ul>
+		</article>
+	</section>
+	<section class="main-section" id="Environment_Setup">
+	<header> Environment Setup</header>
+	<article>
+		<p>In order to develop and run PHP Web pages three vital components need to be installed on your computer system.</p>
+		<ul>
+			<li><b>Web Server </b>− PHP will work with virtually all Web Server software, including Microsoft's Internet Information Server (IIS) but then most often used is freely available Apache Server.</li>
+			<li><b>Database </b>− PHP will work with virtually all database software, including Oracle and Sybase but most commonly used is freely available MySQL database.</li>
+			<li><b>PHP Parser</b> − In order to process PHP script instructions a parser must be installed to generate HTML output that can be sent to the Web Browser. This tutorial will guide you how to install PHP parser on your computer.</li>
+		</ul>
+		<h2>PHP Parser Installation</h2>
+		<p>Before you proceed it is important to make sure that you have proper environment setup on your machine to develop your web programs using PHP.</p>
+		<p>Type the following address into your browser's address box.</p>
+		<div id="code">http://127.0.0.1/info.php</div>
+		<p>If this displays a page showing your PHP installation related information then it means you have PHP and Webserver installed properly. Otherwise you have to follow given procedure to install PHP on your computer.</p>
+		<p>This section will guide you to install and configure PHP over the following four platforms −</p>
+		<ul>
+			<li>PHP Installation on Linux or Unix with Apache</li>
+			<li>PHP Installation on Mac OS X with Apache</li>
+			<li>PHP Installation on Windows NT/2000/XP with IIS</li>
+			<li>PHP Installation on Windows NT/2000/XP with Apache</li>
+		</ul>
+	</article>
+</section>
+<section class="main-section" id="Syntax_Overview">
+<header>Syntax Overview</header>
+<article>
+	<p>This chapter will give you an idea of very basic syntax of PHP and very important to make your PHP foundation strong.</p>
+	<h2>Escaping to PHP</h2>
+	<p>The PHP parsing engine needs a way to differentiate PHP code from other elements in the page. The mechanism for doing so is known as 'escaping to PHP'. There are four ways to do this −</p>
+	<h3>Canonical PHP tags</h3>
+	<p>The most universally effective PHP tag style is −</p>
+	<code translate="no">&lt?php...?&gt</code>
+	
+	
+	<h3>Short-open (SGML-style) tags</h3>
+	<p>Short or short-open tags look like this </p>
+	<code>&lt?...?&gt</code>
+	<h3>ASP-style tags</h3>
+	<p>ASP-style tags mimic the tags used by Active Server Pages to delineate code blocks. ASP-style tags look like this −</p>
+	<code><%...%></code>
+	<h3>HTML script tags</h3>
+	<p>HTML script tags look like this −</p>
+	<code>&ltscript language = "PHP"&gt...&lt/script&gt</code>
+</article>
+</section>
+<section class="main-section" id="Variable_Types">
+<header>Variable Types</header>
+<article>
+<p>The main way to store information in the middle of a PHP program is by using a variable.
+Here are the most important things to know about variables in PHP.</p>
+<ul>
+	<li>All variables in PHP are denoted with a leading dollar sign ($).</li>
+	<li>The value of a variable is the value of its most recent assignment.</li>
+	<li>Variables are assigned with the = operator, with the variable on the left-hand side and the expression to be evaluated on the right.</li>
+	<li>Variables used before they are assigned have default values.</li>
+	<li>PHP does a good job of automatically converting types from one to another when necessary.</li>
+</ul>
+<p>PHP has a total of eight data types which we use to construct our variables −</p>
+<ul>
+	<li><b>Integers</b>− are whole numbers, without a decimal point, like 4195.</li>
+	<li><b>Doubles</b> − are floating-point numbers, like 3.14159 or 49.1.</li>
+	<li><b>Booleans </b>− have only two possible values either true or false.</li>
+	<li><b>NULL </b>− is a special type that only has one value: NULL.</li>
+	<li><b>Strings </b>− are sequences of characters, like 'PHP supports string operations.'</li>
+	<li><b>Arrays </b>− are named and indexed collections of other values.</li>
+	<li><b>Objects</b> − are instances of programmer-defined classes, which can package up both other kinds of values and functions that are specific to the class.</li>
+	<li><b>Resources</b> − are special variables that hold references to resources external to PHP (such as database connections).</li>
+</ul>
+</article>
+</section>
+<section class="main-section" id="Constants_Types">
+<header>Constants Types</header>
+<article>
+<p>A constant is a name or an identifier for a simple value. A constant value cannot change during the execution of the script. By default, a constant is case-sensitive. By convention, constant identifiers are always uppercase. A constant name starts with a letter or underscore, followed by any number of letters, numbers, or underscores. If you have defined a constant, it can never be changed or undefined.</p>
+<p>To define a constant you have to use define() function and to retrieve the value of a constant, you have to simply specifying its name. Unlike with variables, you do not need to have a constant with a $. You can also use the function constant() to read a constant's value if you wish to obtain the constant's name dynamically.</p>
+<h2>constant() function</h2>
+<p>As indicated by the name, this function will return the value of the constant.
+This is useful when you want to retrieve value of a constant, but you do not know its name, i.e. It is stored in a variable or returned by a function.
+</p>
+
+<code>
+&lt?php
+define("MINSIZE", 50);
+echo MINSIZE;
+echo constant("MINSIZE"); // same thing as the previous line
+?&gt
+</code>
+
+</article>
+</section>
+<section class="main-section" id="Operator_Types">
+<header>Operator Types</header>
+<article>
+<p><b>What is Operator?</b>Simple answer can be given using expression 4 + 5 is equal to 9. Here 4 and 5 are called operands and + is called operator. PHP language supports following type of operators.</p>
+<ul>
+<li>Arithmetic Operators</li>
+<li>Comparison Operators</li>
+<li>Logical (or Relational) Operators</li>
+<li>Assignment Operators</li>
+<li>Conditional (or ternary) Operators</li>
+</ul>
+<p>Lets have a look on all operators one by one.</p>
+<h3>Arithmetic Operators</h3>
+<p>There are following arithmetic operators supported by PHP language −
+Assume variable A holds 10 and variable B holds 20 then −</p>
+<table id="operators_table">
+<tbody>
+<tr>
+	<th>Operator </th>
+	<th>Description</th>
+	<th>Example</th>
+</tr>
+<tr>
+	<td>+</td>
+	<td>adds two operands</td>
+	<td>A + B will give 30</td>
+</tr>
+<tr>
+	<td>-</td>
+	<td>Subtracts second operand from the first</td>
+	<td>A - B will give -10</td>
+	
+</tr>
+<tr>
+	<td>*</td>
+	<td>Multiply both operands</td>
+	<td>A * B will give 200</td>
+	
+</tr>
+<tr>
+	<td>/</td>
+	<td>Divide numerator by de-numerator	</td>
+	<td>B / A will give 2</td>
+</tr>
+<tr>
+	<td>%</td>
+	<td>Modulus Operator and remainder of after an integer division	</td>
+	<td>B % A will give 0</td>
+</tr>
+<tr>
+	<td>++</td>
+	<td>Increment operator, increases integer value by one	</td>
+	<td>A++ will give 11</td>
+</tr>
+<tr>
+	<td>--</td>
+	<td>Decrement operator, decreases integer value by one	</td>
+	<td>A-- will give 9</td>
+</tr>
+</tbody>
+</table>
+<h3>Comparison Operators</h3>
+<p>There are following comparison operators supported by PHP language
+Assume variable A holds 10 and variable B holds 20 then −</p>
+<table id="operators_table">
+<tbody>
+<tr>
+	<th>Operator </th>
+	<th>Description</th>
+	<th>Example</th>
+</tr>
+<tr>
+	<td>==</td>
+	<td>Checks if the value of two operands are equal or not, if yes then condition becomes true.</td>
+	<td>(A == B) is not true.</td>
+</tr>
+<tr>
+	<td>!=</td>
+	<td>	Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.</td>
+	<td>(A != B) is true.</td>
+	
+</tr>
+<tr>
+	<td> > </td>
+	<td>Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.	</td>
+	<td>(A > B) is not true.</td>
+	
+</tr>
+<tr>
+	<td> < </td>
+	<td>Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.	</td>
+	<td>(A < B) is true.</td>
+</tr>
+<tr>
+	<td> >= </td>
+	<td>Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.	</td>
+	<td>(A >= B) is not true.</td>
+</tr>
+<tr>
+	<td> <= </td>
+	<td>Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.
+	</td>
+	<td>(A <= B) is true.</td>
+</tr>
+
+</tbody>
+</table>
+<h3>Logical Operators</h3>
+<p>There are following logical operators supported by PHP language
+Assume variable A holds 10 and variable B holds 20 then −</p>
+<table id="operators_table">
+<tbody>
+<tr>
+	<th>Operator </th>
+	<th>Description</th>
+	<th>Example</th>
+</tr>
+<tr>
+	<td>and</td>
+	<td>Called Logical AND operator. If both the operands are true then condition becomes true.	</td>
+	<td>(A and B) is true.</td>
+</tr>
+<tr>
+	<td>or</td>
+	<td>Called Logical OR Operator. If any of the two operands are non zero then condition becomes true.</td>
+	<td>(A or B) is true.</td>
+	
+</tr>
+<tr>
+	<td> &&</td>
+	<td>Called Logical AND operator. If both the operands are non zero then condition becomes true.</td>
+	<td>(A && B) is true.</td>
+	
+</tr>
+<tr>
+	<td> || </td>
+	<td>Called Logical OR Operator. If any of the two operands are non zero then condition becomes true.	</td>
+	<td>(A || B) is true.</td>
+</tr>
+<tr>
+	<td> ! </td>
+	<td>Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false..</td>
+	<td>!(A && B) is false.</td>
+</tr>
+
+</table>
+<h3>Assignment Operators</h3>
+<p>There are following assignment operators supported by PHP language −</p>
+
+<table id="operators_table">
+<tbody>
+	<tr>
+		<th>Operator </th>
+		<th>Description</th>
+		<th>Example</th>
+	</tr>
+	<tr>
+		<td> = </td>
+		<td>Simple assignment operator, Assigns values from right side operands to left side operand</td>
+		<td>C = A + B will assign value of A + B into C</td>
+	</tr>
+	<tr>
+		<td>+=</td>
+		<td>Add AND assignment operator, It adds right operand to the left operand and assign the result to left operand	</td>
+		<td>C += A is equivalent to C = C + A</td>
+	</tr>
+	<tr>
+		<td>-=</td>
+		<td>Subtract AND assignment operator, It subtracts right operand from the left operand and assign the result to left operand</td>
+		<td>C -= A is equivalent to C = C - A</td>
+	</tr>
+	<tr>
+		<td>*=</td>
+		<td>Multiply AND assignment operator, It multiplies right operand with the left operand and assign the result to left operand</td>
+		<td>C *= A is equivalent to C = C * A</td>
+	</tr>
+	<tr>
+		<td>/=</td>
+		<td	>Divide AND assignment operator, It divides left operand with the right operand and assign the result to left operand</td>
+		<td>C /= A is equivalent to C = C / A</td>
+	</tr>
+	<tr>
+		<td>%=</td>
+		<td	>Modulus AND assignment operator, It takes modulus using two operands and assign the result to left operand</td>
+		<td>C %= A is equivalent to C = C % A</td>
+	</tr>
+	
+</table>
+<h3>Conditional Operator</h3>
+<p>There is one more operator called conditional operator. This first evaluates an expression for a true or false value and then execute one of the two given statements depending upon the result of the evaluation. The conditional operator has this syntax −</p>
+<table id="operators_table">
+	<tbody>
+		<tr>
+			<th>Operator </th>
+			<th>Description</th>
+			<th>Example</th>
+		</tr>
+		<tr>
+			<td> ? :</td>
+			<td>Conditional Expression</td>
+			<td>If Condition is true ? Then value X : Otherwise value Y</td>
+		</tr>
+	</tbody>
+</table>
+</article>
+</section>
+<section class="main-section" id="Decision_Making">
+<header>Decision Making</header>
+<article>
+<p>The if, elseif ...else and switch statements are used to take decision based on the different condition.
+You can use conditional statements in your code to make your decisions. PHP supports following three decision making statements −
+</p>
+<ul>
+<li><b>	if...else statement</b>− use this statement if you want to execute a set of code when a condition is true and another if the condition is not true	</li>
+<li><b>	elseif statement</b> − is used with the if...else statement to execute a set of code if one of the several condition is true	</li>
+<li><b>	switch statement </b> − is used if you want to select one of many blocks of code to be executed, use the Switch statement. The switch statement is used to avoid long blocks of if..elseif..else code.	</li>
+</ul>
+<h3>	The If...Else Statement</h3>
+<p>	If you want to execute some code if a condition is true and another code if a condition is false, use the if....else statement.</p>
+<p>	Syntax:</p>
+
+<code>
+if (<i>condition </i>)
+<i>code to be executed if condition is true;</i>
+else
+<i>code to be executed if condition is false;</i>
+</code>
+<h3>The ElseIf Statement</h3>
+<p>If you want to execute some code if one of the several conditions are true use the elseif statement</p>
+<p>Syntax:</p>
+<code>
+if (<i>condition</i>)
+<i>code to be executed if condition is true;</i>
+elseif (<i>condition</i>)
+<i>code to be executed if condition is true;</i>
+else
+<i>code to be executed if condition is false;</i>
+</code>
+<h3>The Switch Statement</h3>
+<p>If you want to select one of many blocks of code to be executed, use the Switch statement.
+The switch statement is used to avoid long blocks of if..elseif..else code.</p>
+<p>Syntax:</p>
+<code>switch (<i>expression</i>){
+case label1:
+<i>code to be executed if expression = label1;</i>
+break;
+
+case label2:
+<i>code to be executed if expression = label2;</i>
+break;
+default:
+
+<i> code to be executed
+if expression is different
+from both label1 and label2;</i>
+}
+</code>
+</article>
+</section>
+<section class="main-section" id="Loop_Types">
+<header>Loop Types</header>
+<article>
+<p>Loops in PHP are used to execute the same block of code a specified number of times. PHP supports following four loop types.</p>
+<ul>
+<li><b>for</b>− loops through a block of code a specified number of times.</li>
+<li><b>while</b> − loops through a block of code if and as long as a specified condition is true.</li>
+<li><b>do..while</b>− loops through a block of code once, and then repeats the loop as long as a special condition is true.</li>
+<li><b>foreach</b> − loops through a block of code for each element in an array.</li>
+</ul>
+<h3>The for loop statement</h3>
+<p>The for statement is used when you know how many times you want to execute a statement or a block of statements.</p>
+<p>Syntax:</p>
+<code>
+for (<i>initialization; condition; increment){
+code to be executed;</i>
+}
+</code>
+<h3>The while loop statement</h3>
+<p>The while statement will execute a block of code if and as long as a test expression is true.
+If the test expression is true then the code block will be executed. After the code has executed the test expression will again be evaluated and the loop will continue until the test expression is found to be false.</p>
+Syntax:
+<code>
+while <i>(condition) {
+code to be executed;</i>
+}
+</code>
+<h3>The do...while loop statement</h3>
+<p>The do...while statement will execute a block of code at least once - it then will repeat the loop as long as a condition is true.</p>
+<p>Syntax:</p>
+<code>
+do {
+<i>code to be executed;</i>
+}
+while <i>(condition);</i>
+</code>
+<h3>The foreach loop statement</h3>
+<p>The foreach statement is used to loop through arrays. For each pass the value of the current array element is assigned to $value and the array pointer is moved by one and in the next pass next element will be processed.</p>
+<p>Syntax:</p>
+<code>
+foreach <i> (array as value) {
+code to be executed;</i>
+}
+</code>
+</article>
+</section>
+<section class="main-section" id="Functions">
+<header> Functions</header>
+<article>
+<p>PHP functions are similar to other programming languages. A function is a piece of code which takes one more input in the form of parameter and does some processing and returns a value.
+You already have seen many functions like fopen() and fread() etc. They are built-in functions but PHP gives you option to create your own functions as well.</p>
+<p>There are two parts which should be clear to you −</p>
+<ul>
+<li>Creating a PHP Function</li>
+<li>Calling a PHP Function</li>
+</ul>
+<p>In fact you hardly need to create your own PHP function because there are already more than 1000 of built-in library functions created for different area and you just need to call them according to your requirement.</p>
+<h3>Creating PHP Function</h3>
+<p>Its very easy to create your own PHP function. Suppose you want to create a PHP function which will simply write a simple message on your browser when you will call it. Following example creates a function called writeMessage() and then calls it just after creating it.
+Note that while creating a function its name should start with keyword function and all the PHP code should be put inside { and } braces as shown in the following example below −</p>
+<code>
+&lt?php
+/* Defining a PHP Function */
+function writeMessage() {
+echo "You are really a nice person, Have a nice time!";
+}
+
+/* Calling a PHP Function */
+writeMessage();
+?&gt
+</code>
+</article>
+</section>
+<section class="main-section" id="Strings">
+<header>Strings</header>
+<article>
+<p>They are sequences of characters, like "PHP supports string operations".</p>
+<p>Following are valid examples of string</p>
+<code>
+$string_1 = "This is a string in double quotes";
+$string_2 = "This is a somewhat longer, singly quoted string";
+$string_39 = "This string has thirty-nine characters";
+$string_0 = ""; // a string with zero characters
+
+</code>
+<p>Singly quoted strings are treated almost literally, whereas doubly quoted strings replace variables with their values as well as specially interpreting certain character sequences.</p>
+</article>
+</section>
+
+</main>
+<script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
